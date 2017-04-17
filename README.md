@@ -14,5 +14,5 @@ This is not your regular boring java logging tutorial! Time to put a different s
 
 *** You will need to have a locally running mongoDB instance running on port 27107 before running the application ***
 
-Follow alony with My YouTube Video Tutorial 
+Follow along with My YouTube Video Tutorial 
 "Advanced Java Logging with Spring Data and MongoDB" https://youtu.be/miqtbm7x60A
