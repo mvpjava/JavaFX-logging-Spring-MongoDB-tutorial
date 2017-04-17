@@ -1,0 +1,18 @@
+TestFX 3 ( extends GuiTest , @Override  getRootNode())
+What is TestFX 4?
+    - more in line with JavaFX bootstrapping (extends ApplicationTest)
+    - ApplicationTest extends FxRobot (clickon, write , drag etc ..sim user actions    )
+      implements ApplicationFixture  (init, start, stop)
+    - launch(Class<? extends Application> ..)
+    - can use othertesting frameworks, not just Junit
+    - new node query API.
+    - Java 8 lambdas
+    - headless testing using Monocle (thus can use on CI server configurations )
+
+POM - alpha 4.0.4 March 2016 (> 1 year)
+- SpringApplicationBuilder.headless(false)
+
+    public static <T extends Node> void verifyThat(NodeQuery nodeQuery,
+                                                   Predicate<T> nodePredicate) {
+        verifyThatImpl(emptyReason(), toNode(nodeQuery), toNodeMatcher(nodePredicate));
+    }

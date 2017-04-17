@@ -1,0 +1,8 @@
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #DCDCDC;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+}

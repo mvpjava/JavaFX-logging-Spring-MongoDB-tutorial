@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>    
+ 
+    <appender name="MONGO" class="com.mvp.java.logging.MongoLogAppenderAsync" >
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level> 
+        </filter>
+        <connectionString>mongodb://localhost:27017/test.log</connectionString>
+    </appender>
+    
+<!-- levels are ...
+    TRACE,
+    DEBUG,
+    INFO,
+    WARN, 
+    ERROR
+-->
+
+<logger name="org.mongodb" level="WARN"/>
+
+<logger name="com.mvp.java" level="DEBUG"/>
+
+<!-- All the appenders inherit at least the DEBUG level, it is up to
+the appenders after to furthur provide any filtering if there is a need -->
+<root level="DEBUG">          
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="MONGO"/>
+</root>  
+
+</configuration>

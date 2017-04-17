@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import jfxtras.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<Tab fx:id="mongoLogger" text="Mongo Logger" xmlns:fx="http://javafx.com/fxml/1" 
+     fx:controller="com.mvp.java.controllers.MongoLoggerController">
+    <content>
+        <VBox prefHeight="710.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/8" 
+              xmlns:fx="http://javafx.com/fxml/1" >
+            <children>
+                <AnchorPane fx:id="queryAnchorPane" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="581.0">
+                    <children>
+                        <Label layoutX="13.0" layoutY="22.0" prefHeight="17.0" prefWidth="62.0" text="Message:" AnchorPane.leftAnchor="13.0" />
+                        <ComboBox fx:id="loggerLevelComboBox" layoutX="567.0" layoutY="90.0" prefHeight="25.0" prefWidth="109.0" promptText="LEVEL" />
+                        <TextField fx:id="logMessageTextField" layoutX="104.0" layoutY="14.0" prefHeight="25.0" prefWidth="435.0" AnchorPane.leftAnchor="104.0" />
+                        <Label layoutX="13.0" layoutY="50.0" prefHeight="25.0" prefWidth="82.0" text="Logger Name:" AnchorPane.leftAnchor="13.0" />
+                        <TextField fx:id="loggerNameTextField" layoutX="105.0" layoutY="50.0" prefHeight="25.0" prefWidth="435.0" AnchorPane.leftAnchor="104.0" />
+                        <Label layoutX="14.0" layoutY="88.0" prefHeight="25.0" prefWidth="69.0" text="Exception:" AnchorPane.leftAnchor="13.0" />
+                        <TextField fx:id="exceptionTextField" layoutX="104.0" layoutY="88.0" prefHeight="25.0" prefWidth="435.0" AnchorPane.leftAnchor="104.0" />
+                        <Label layoutX="13.0" layoutY="125.0" prefHeight="25.0" prefWidth="75.0" text="Thread:" AnchorPane.leftAnchor="13.0" />
+                        <TextField fx:id="threadTextField" layoutX="104.0" layoutY="125.0" prefHeight="25.0" prefWidth="435.0" AnchorPane.leftAnchor="104.0" />
+                        <Button fx:id="searchButton" layoutX="976.0" layoutY="13.0" mnemonicParsing="false" onAction="#searchAction" prefHeight="66.0" prefWidth="75.0" text="Search" AnchorPane.leftAnchor="976.0" />
+                        <Label fx:id="totalLogCountLabel" layoutX="12.0" layoutY="161.0" prefHeight="38.0" prefWidth="1070.0" text="Total Records:" wrapText="true" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="5.0" />
+                        <Button fx:id="clearAllButton" layoutX="866.0" layoutY="13.0" mnemonicParsing="false" onAction="#clearAllonAction" prefHeight="66.0" prefWidth="83.0" text="Clear All" />
+                        <DatePicker fx:id="startDatePicker" layoutX="567.0" layoutY="14.0" prefHeight="25.0" prefWidth="109.0" promptText="Start Date" AnchorPane.leftAnchor="567.0" />
+                        <DatePicker fx:id="endDatePicker" layoutX="567.0" layoutY="50.0" prefHeight="25.0" prefWidth="109.0" promptText="End Date" AnchorPane.leftAnchor="567.0" />
+                        <TextField fx:id="startTime" layoutX="692.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" AnchorPane.leftAnchor="692.0" />
+                        <TextField fx:id="endTime" layoutX="692.0" layoutY="50.0" prefHeight="25.0" prefWidth="149.0" AnchorPane.leftAnchor="692.0" />
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </VBox.margin>
+                </AnchorPane>
+                <AnchorPane prefHeight="129.0" prefWidth="591.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <TableView fx:id="logTableView" layoutX="2.0" layoutY="-302.0" prefHeight="465.0" prefWidth="1087.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="-302.0">
+                            <columns>
+                                <TableColumn fx:id="timestampCol" prefWidth="163.0" text="Timestamp" />
+                                <TableColumn fx:id="messageCol" prefWidth="580.0" text="Message" />
+                                <TableColumn fx:id="loggerCol" prefWidth="250.0" text="Logger" />
+                                <TableColumn fx:id="exceptionCol" prefWidth="75.0" text="Exception" />
+                                <TableColumn fx:id="threadCol" prefWidth="125.0" text="Thread" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </content>
+</Tab>
